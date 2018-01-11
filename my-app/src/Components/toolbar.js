@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 export class Toolbar extends React.Component{
@@ -17,7 +18,7 @@ export class Toolbar extends React.Component{
 
     const style2 = {
       float: 'left',
-      paddingLeft: '20vw'
+      marginLeft: '20vw'
 
     }
 
@@ -26,21 +27,21 @@ export class Toolbar extends React.Component{
     }
 
     const style4 = {
-      paddingRight: '4vw',
+      marginRight: '4vw',
     }
 
     const style5 = {
-      paddingRight: '20vw',
+      marginRight: '19vw',
     }
 
 
     return(
       <div style={style1}>
         <div>
-        <span style={style2}>Game Rank</span>
+        <span style={style2}><Link to='/'>Game Rank</Link></span>
         <span style={style3}>
           <span style={style4}>Archive</span>
-          <span style={style5}>About</span>
+          <span style={style5}><Link to='/about'>About</Link></span>
         </span>
         </div>
       </div>

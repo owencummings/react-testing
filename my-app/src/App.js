@@ -3,25 +3,23 @@ import logo from './logo.svg';
 import './App.css';
 
 import { Toolbar } from './Components/toolbar';
-import { Item } from './Components/main-item';
-import { Footer } from './Components/footer';
+import { Main } from './Components/main';
+import { About } from './Components/about';
 
 import { data } from './data';
+import { Route, Link } from "react-router-dom";
+
+
 
 class App extends Component {
   render() {
-
-    const items = data.items.map((item) =>
-      <Item item={item}/>
-    );
-
 
     return (
       <div className="App">
 
         <Toolbar />
-        {items}
-        <Footer />
+        <Route exact path="/" component={Main} />
+        <Route exact path="/about" component={About} />
       </div>
     );
   }
