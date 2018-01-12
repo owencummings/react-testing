@@ -2,28 +2,38 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+
+.MainAppearTransition-appear {
+  opacity: 0.5;
+  transform: translateX(1000px);
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.MainAppearTransition-appear.MainAppearTransition-appear-active{
+  opacity: 1;
+  transform: translateX(0px);
+  transition: all 1s ease
 }
 
-.App-title {
-  font-size: 1.5em;
+.MainAppearTransition-leave {
+  opacity: 1;
+  transform: translateX(0px);
 }
 
-.App-intro {
-  font-size: large;
-
+.MainAppearTransition-leave.MainAppearTransition-leave-active{
+  opacity: 0.5;
+  transform: translateX(-1000px);
+  transition: all 1s ease
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+
+
+.AboutAppearTransition-appear {
+  opacity: 0.5;
+  transform: translateX(1000px);
+}
+
+.AboutAppearTransition-appear.AboutAppearTransition-appear-active{
+  opacity: 1;
+  transform: translateX(0px);
+  transition: all 1s ease
 }

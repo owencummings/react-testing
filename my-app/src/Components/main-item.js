@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Link } from "react-router-dom";
+
 export class Item extends React.Component{
   render(){
 
@@ -52,28 +54,31 @@ export class Item extends React.Component{
     const styleRating ={
       color: 'black',
       fontSize: '4em',
-      fontWeight: '700'
+      fontWeight: '700',
+      color: '#333'
 
     }
 
 
     return(
-      <div style={styleCont}>
-          <div style={styleImg}>
+      <Link to={'/review/' + this.props.item.id}>
+        <div style={styleCont}>
+            <div style={styleImg}>
 
-          </div>
-          <div style={styleContent}>
-            <div style={styleAuthor}>
-              {this.props.item.author}
             </div>
-            <div style={styleRating}>
-              {this.props.item.rating}
+            <div style={styleContent}>
+              <div style={styleAuthor}>
+                {this.props.item.author}
+              </div>
+              <div style={styleRating}>
+                {this.props.item.rating}
+              </div>
+              <div style={styleDate}>
+                {this.props.item.date}
+              </div>
             </div>
-            <div style={styleDate}>
-              {this.props.item.date}
-            </div>
-          </div>
-      </div>
+        </div>
+      </Link>
 
     )
 

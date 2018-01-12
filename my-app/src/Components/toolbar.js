@@ -5,6 +5,12 @@ import { Link } from 'react-router-dom';
 export class Toolbar extends React.Component{
   render(){
 
+    const styleMain = {
+      fontWeight: '700',
+      color: '#BBB',
+      textDecoration: 'none'
+    }
+
     const style1 = {
       background: 'white',
       color: '#BBB',
@@ -38,10 +44,10 @@ export class Toolbar extends React.Component{
     return(
       <div style={style1}>
         <div>
-        <span style={style2}><Link to='/'>Game Rank</Link></span>
+        <span style={style2}><Link to='/' style={styleMain}>Game Rank</Link></span>
         <span style={style3}>
           <span style={style4}>Archive</span>
-          <span style={style5}><Link to='/about'>About</Link></span>
+          <span style={style5}><Link to='/about' style={styleMain}>About</Link></span>
         </span>
         </div>
       </div>
