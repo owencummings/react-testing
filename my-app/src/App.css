@@ -4,7 +4,7 @@
 
 
 .MainAppearTransition-appear {
-  opacity: 0.5;
+  opacity: 0.3;
   transform: translateX(1000px);
 }
 
@@ -20,7 +20,7 @@
 }
 
 .MainAppearTransition-leave.MainAppearTransition-leave-active{
-  opacity: 0.5;
+  opacity: 0.1;
   transform: translateX(-1000px);
   transition: all 1s ease
 }
