@@ -8,50 +8,87 @@ export class Toolbar extends React.Component{
 
     const styleMain = {
       fontWeight: '700',
-      color: '#BBB',
+      color: 'inherit',
       textDecoration: 'none'
     }
 
-    const style1 = {
-      background: 'white',
-      color: '#BBB',
-      borderBottom: 'solid 1px #DDD',
-      height: '10vh',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      fontWeight: '700'
-    };
+    const Container = styled.div`
+      background: white;
+      border-bottom: solid 2px  #BBB;
+      height: 10vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-weight: 700;
+      transition: border-bottom 1s, height 1s;
 
-    const style2 = {
-      float: 'left',
-      marginLeft: '20vw'
+      :hover{
+        border-bottom: solid 2px rgb(255, 85, 170);
+        height: 12vh;
+      }
 
-    }
+    `;
+
+    const Title = styled.span`
+      float: left;
+      margin-left: 20vw;
+      color:  #BBB;
+      transition: color 1s, font-size 1s;
+      ${Container}:hover & {
+        color: rgba(255,170,170,1);
+      }
+      :hover{
+        font-size: 1.3em;
+      }
+
+      `;
 
     const style3 = {
       float: 'right'
     }
 
-    const style4 = {
-      marginRight: '4vw',
-    }
+    const Archive = styled.span`
+      margin-right: 4vw;
+      color:  #BBB;
+      transition: color 1s, font-size 1s;
 
-    const style5 = {
-      marginRight: '19vw',
-    }
+      ${Container}:hover & {
+        color: rgba(255,170,170,1);
+      }
+
+      :hover{
+        font-size: 1.3em;
+      }
+
+
+
+    `
+
+    const About = styled.span`
+      margin-right: 19vw;
+      color:  #BBB;
+      transition: color 1s, font-size 1s;
+
+      ${Container}:hover & {
+        color: rgba(255,170,170,1);
+      }
+
+      :hover{
+        font-size: 1.3em;
+      }
+    `
 
 
     return(
-      <div style={style1}>
+      <Container>
         <div>
-        <span style={style2}><Link to='/' style={styleMain}>Game Rank</Link></span>
+        <Title><Link to='/' style={styleMain}>Game Rank</Link></Title>
         <span style={style3}>
-          <span style={style4}>Archive</span>
-          <span style={style5}><Link to='/about' style={styleMain}>About</Link></span>
+          <Archive>Archive</Archive>
+          <About><Link to='/about' style={styleMain}>About</Link></About>
         </span>
         </div>
-      </div>
+      </Container>
     );
   }
 

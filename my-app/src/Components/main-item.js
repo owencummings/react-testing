@@ -11,13 +11,20 @@ export class Item extends React.Component{
       width: 60vw;
       border: solid 1px #CCC;
       height: 40vh;
-      margin-left: 20vw;
+      margin: 0 auto;
       margin-top: 5vh;
+      transition: border 1s, height 1s, width 1s;
+
+      :hover{
+        border: solid 3px #111;
+        height: 44vh;
+        width: 66vw;
+      }
     `;
 
     const Image = styled.div`
-      height: 40vh;
-      width: 42vw;
+      height: 100%;
+      width: 70%;
       border-radius-top-left: 10px;
       border-radius-bottom-left: 10px;
       background-position: center;
@@ -45,8 +52,8 @@ export class Item extends React.Component{
     `
 
     const Content = styled.div`
-      height: 40vh;
-      width: 18vw;
+      height: 100%;
+      width: 30%;
       float: right;
       display: flex;
       flex-direction: column;
@@ -61,7 +68,7 @@ export class Item extends React.Component{
       transition: color 1s;
 
       ${Container}:hover & {
-        color: #809fff;
+        color: rgba(255,170,170,1);
       }
     `
 
@@ -72,20 +79,28 @@ export class Item extends React.Component{
       transition: color 1s;
 
       ${Container}:hover & {
-        color: #809fff;
+        color: rgba(255,85,170,1);
       }
     `
 
 
     const Rating = styled.div`
       color: black;
-      font-size: 4em;
+      font-size: 6em;
       font-weight: 700;
       color: #333;
-      transition: color 1s;
+      margin-bottom: 0px;
+      text-shadow: 0px 4px 0px rgba(255,85,0,0),
+                   0px 8px 0px rgba(255,170,0,0),
+                   0px 12px rgba(255,255,0,0);
+      transition: color 1s, text-shadow 1s, margin-bottom 1s;
 
       ${Container}:hover & {
-        color: #809fff;
+        color: rgb(255,0,170);
+        margin-bottom: 20px;
+        text-shadow: 0px 4px 0px rgba(255,85,170,1),
+                     0px 8px 0px rgba(255,170,170,1),
+                     0px 12px 0px rgba(255,255,170,1);
       }
     `
 
