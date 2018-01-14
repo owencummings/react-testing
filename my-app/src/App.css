@@ -3,37 +3,67 @@
 }
 
 
-.MainAppearTransition-appear {
-  opacity: 0.3;
-  transform: translateX(1000px);
+.transition-wrapper {
+    position: relative;
+    z-index: 1;
 }
 
-.MainAppearTransition-appear.MainAppearTransition-appear-active{
-  opacity: 1;
-  transform: translateX(0px);
-  transition: all 1s ease
+.transition-wrapper .transition-item {
+    position: fixed;
+    top: inherit;
+    right: 0;
+    left: 0;
 }
 
-.MainAppearTransition-leave {
-  opacity: 1;
-  transform: translateX(0px);
+.main-page{
+  transition: all 1s ease;
+  transform: translate3d(0, 0, 0);
+
 }
 
-.MainAppearTransition-leave.MainAppearTransition-leave-active{
-  opacity: 0.1;
-  transform: translateX(-1000px);
-  transition: all 1s ease
+.main-page.transition-appear {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+}
+
+.main-page.transition-appear.transition-appear-active {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+.main-page.transition-leave {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+.main-page.transition-leave.transition-leave-active {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
 }
 
 
+.review-page{
+  transition: all 1s ease;
+  transform: translate3d(0, 0, 0);
 
-.AboutAppearTransition-appear {
-  opacity: 0.5;
-  transform: translateX(1000px);
 }
 
-.AboutAppearTransition-appear.AboutAppearTransition-appear-active{
-  opacity: 1;
-  transform: translateX(0px);
-  transition: all 1s ease
+.review-page.transition-appear {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+}
+
+.review-page.transition-appear.transition-appear-active {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+.review-page.transition-leave {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+.review-page.transition-leave.transition-leave-active {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
 }

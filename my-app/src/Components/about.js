@@ -13,18 +13,10 @@ export class About extends React.Component{
     }
 
     return(
-      <ReactCSSTransitionGroup
-        transitionName='AboutAppearTransition'
-        transitionAppear={ true }
-        transitionAppearTimeout={ 1000 }
-        transitionEnter={ false }
-        transitionLeave={ false }
-      >
-        <div>
+        <div className='transition-item review-page'>
           <div style={style1}>I mean, there is no funny business going on here. Honest!</div>
           <Footer />
         </div>
-      </ReactCSSTransitionGroup>
     )
   }
 

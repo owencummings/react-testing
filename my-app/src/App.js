@@ -8,8 +8,12 @@ import { About } from './Components/about';
 import { Review } from './Components/review';
 
 import { data } from './data';
-import { Route, Link } from "react-router-dom";
+import { Route, Link, Switch } from "react-router-dom";
 import TransitionGroup from 'react-transition-group/TransitionGroup'
+
+import { BrowserRouter } from "react-router-dom";
+import PageTransition from 'react-router-page-transition';
+
 
 
 class App extends Component {
@@ -19,12 +23,23 @@ class App extends Component {
       <div className="App">
 
         <Toolbar />
-        <Route exact path="/" component={Main} />
-        <Route exact path="/about" component={About} />
-        <Route path='/review/:game' component={Review} />
+        <Route
+          render={({ location }) => (
+            <PageTransition timeout={1000}>
+              <Switch location={location}>
+                <Route exact path="/" component={Main} />
+                <Route exact path="/about" component={About} />
+                <Route path='/review/:game' component={Review} />
+                <div></div>
+              </Switch>
+            </PageTransition>
+          )}
+        />
       </div>
     );
   }
 }
+
+
 
 export default App;

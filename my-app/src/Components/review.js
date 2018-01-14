@@ -3,8 +3,6 @@ import React from 'react';
 import { Footer } from './footer';
 import { data } from '../data';
 
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-
 export class Review extends React.Component{
 
 
@@ -33,8 +31,8 @@ export class Review extends React.Component{
     }
 
 
-    const content = data.items[this.props.match.params.game].content.map((chunk)=>
-      <div style={style1}>
+    const content = data.items[this.props.match.params.game].content.map((chunk, index)=>
+      <div key={index} style={style1}>
         {(function(){
           switch(chunk[0]){
             case 'p': //paragraph
@@ -54,18 +52,12 @@ export class Review extends React.Component{
 
 
     return(
-      <ReactCSSTransitionGroup
-        transitionName='AboutAppearTransition'
-        transitionAppear={ true }
-        transitionAppearTimeout={ 1000 }
-        transitionEnter={ false }
-        transitionLeave={ false }
-      >
-        <div>
+
+        <div className='transition-item review-page'>
           {content}
           <Footer />
         </div>
-      </ReactCSSTransitionGroup>
+
     )
   }
 

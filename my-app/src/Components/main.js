@@ -10,28 +10,32 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 
 export class Main extends React.Component{
-
   render(){
 
-    const items = data.items.map((item) =>
-        <Item item={item}/>
+
+    const items = data.items.map((item, index) =>
+        <Item key={index} item={item}/>
     );
 
     return(
-      <ReactCSSTransitionGroup
-        transitionName='MainAppearTransition'
-        transitionAppear={ true }
-        transitionAppearTimeout={ 1000 }
-        transitionEnter={ false }
-        transitionLeave={ 1000 }
-      >
-        <div>
+
+        <div className='transition-item main-page'>
           {items}
           <Footer />
         </div>
-      </ReactCSSTransitionGroup>
+
     )
   }
 
+  /*
+  <ReactCSSTransitionGroup
+    transitionName='MainAppearTransition'
+    transitionAppear={ true }
+    transitionAppearTimeout={ 1000 }
+    transitionEnter={ false }
+    transitionLeave={ 1000 }
+  >
+  </ReactCSSTransitionGroup>
+  */
 
 }
