@@ -9,13 +9,15 @@ export class Toolbar extends React.Component{
     const styleMain = {
       fontWeight: '700',
       color: 'inherit',
+      textTransform: 'uppercase',
       textDecoration: 'none'
+
     }
 
     const Container = styled.div`
       background: white;
       border-bottom: solid 2px  #BBB;
-      height: 10vh;
+      height: 6vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -24,14 +26,14 @@ export class Toolbar extends React.Component{
 
       :hover{
         border-bottom: solid 2px rgb(255, 85, 170);
-        height: 12vh;
+        height: 9.5vh;
       }
 
     `;
 
     const Title = styled.span`
       float: left;
-      margin-left: 20vw;
+      margin-left: 19vw;
       color:  #BBB;
       transition: color 1s, font-size 1s;
       ${Container}:hover & {
@@ -47,6 +49,7 @@ export class Toolbar extends React.Component{
       float: 'right'
     }
 
+    /*
     const Archive = styled.span`
       margin-right: 4vw;
       color:  #BBB;
@@ -59,13 +62,11 @@ export class Toolbar extends React.Component{
       :hover{
         font-size: 1.3em;
       }
-
-
-
     `
+    */
 
     const About = styled.span`
-      margin-right: 19vw;
+      margin-right: 20vw;
       color:  #BBB;
       transition: color 1s, font-size 1s;
 
@@ -82,9 +83,8 @@ export class Toolbar extends React.Component{
     return(
       <Container>
         <div>
-        <Title><Link to='/' style={styleMain}>Game Rank</Link></Title>
+        <Title><Link to='/' style={styleMain}>Gamerank</Link></Title>
         <span style={style3}>
-          <Archive>Archive</Archive>
           <About><Link to='/about' style={styleMain}>About</Link></About>
         </span>
         </div>

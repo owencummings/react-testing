@@ -16,7 +16,7 @@ export class Item extends React.Component{
       transition: border 1s, height 1s, width 1s;
 
       :hover{
-        border: solid 3px #111;
+        border: solid 3px rgba(255,85,170,1);;
         height: 44vh;
         width: 66vw;
       }
@@ -30,25 +30,51 @@ export class Item extends React.Component{
       background-position: center;
       background-size: cover;
       float: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     `
     const styleImage = {
       backgroundImage: 'url("'+ this.props.item.imgUrl +'")',
     }
 
     const InternalTitle = styled.div`
-      height: 100%;
-      width: 100%;
-      opacity: 0;
+      height: 0vh;
+      width: 40vw;
+      margin: 0 auto;
+      opacity: 1;
       color: white;
-      background-color: black;
-      transition: opacity 1s;
-      font-weight: 700;
-      font-size: 2em;
+      background-color: rgba(255,170,170,1);
+      transition: all 1s;
       top: 30%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
 
       ${Container}:hover & {
-        opacity: .7;
+        opacity: 1;
+        margin: 0 auto;
+        height: 30vh;
       }
+    `
+
+    const GameTitle = styled.div`
+      font-weight: 700;
+      font-size: 3em;
+      width: 80%;
+      margin-left: 10%;
+      text-transform: uppercase;
+      text-shadow: 0px 4px 0px rgba(255,85,170,1);
+    `
+
+    const GameSubtitle = styled.div`
+      font-weight: 500;
+      font-size: 1.3em;
+      margin-top: 3vh;
+      width: 80%;
+      margin-left: 10%;
+      text-shadow: 0px 2px 0px rgba(255,85,170,1);
     `
 
     const Content = styled.div`
@@ -77,9 +103,10 @@ export class Item extends React.Component{
       color: #CCC;
       margin-bottom: 3vh;
       transition: color 1s;
+      font-weight: 600;
 
       ${Container}:hover & {
-        color: rgba(255,85,170,1);
+        color: rgba(255,170,170,1);
       }
     `
 
@@ -90,9 +117,9 @@ export class Item extends React.Component{
       font-weight: 700;
       color: #333;
       margin-bottom: 0px;
-      text-shadow: 0px 4px 0px rgba(255,85,0,0),
-                   0px 8px 0px rgba(255,170,0,0),
-                   0px 12px rgba(255,255,0,0);
+      text-shadow: 0px 0px 0px rgba(255,85,0,1),
+                   0px 0px 0px rgba(255,170,0,1),
+                   0px 0px rgba(255,255,0,1);
       transition: color 1s, text-shadow 1s, margin-bottom 1s;
 
       ${Container}:hover & {
@@ -111,9 +138,12 @@ export class Item extends React.Component{
             <Link to={'/review/' + this.props.item.id}>
               <Image style={styleImage}>
                 <InternalTitle>
-                  {this.props.item.game}
-                  <br />
-                  {this.props.item.title}
+                  <GameTitle>
+                    {this.props.item.game}
+                  </GameTitle>
+                  <GameSubtitle>
+                    {this.props.item.title}
+                  </GameSubtitle>
                 </InternalTitle>
               </Image>
               <Content>

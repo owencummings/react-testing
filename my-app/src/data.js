@@ -5,7 +5,7 @@ export const data = {
       id: 0,
       type: 'review',
       game: 'Shovel Knight',
-      title: 'The renaissance is Here. Get digging.',
+      title: 'The renaissance is here. Get digging.',
       rating: '8',
       author: 'Owen Cummings',
       date: '1/3/2018',

@@ -17,9 +17,14 @@ export class Main extends React.Component{
         <Item key={index} item={item}/>
     );
 
+    const style1 = {
+      height: '90vh',
+      overflowY: 'scroll',
+    }
+
     return(
 
-        <div className='transition-item main-page'>
+        <div style={style1} className='transition-item main-page'>
           {items}
           <Footer />
         </div>

@@ -9,6 +9,11 @@ export class Review extends React.Component{
 
   render(){
 
+    const styleCont = {
+      height: '90vh',
+      overflowY: 'scroll',
+    }
+
     const style1 = {
       marginTop: '8vh',
       marginBottom: '10vh',
@@ -53,7 +58,7 @@ export class Review extends React.Component{
 
     return(
 
-        <div className='transition-item review-page'>
+        <div className='transition-item review-page' style={styleCont}>
           {content}
           <Footer />
         </div>
