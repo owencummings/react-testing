@@ -11,7 +11,7 @@ import { data } from './data';
 import { Route, Link, Switch } from "react-router-dom";
 import TransitionGroup from 'react-transition-group/TransitionGroup'
 
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, HashRouter } from "react-router-dom";
 import PageTransition from 'react-router-page-transition';
 
 

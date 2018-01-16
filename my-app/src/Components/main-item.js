@@ -64,14 +64,13 @@ export class Item extends React.Component{
       font-size: 3em;
       width: 80%;
       margin-left: 10%;
-      text-transform: uppercase;
       text-shadow: 0px 4px 0px rgba(255,85,170,1);
     `
 
     const GameSubtitle = styled.div`
       font-weight: 500;
-      font-size: 1.3em;
-      margin-top: 3vh;
+      font-size: 1.4em;
+      margin-top: 2vh;
       width: 80%;
       margin-left: 10%;
       text-shadow: 0px 2px 0px rgba(255,85,170,1);
@@ -104,6 +103,7 @@ export class Item extends React.Component{
       margin-bottom: 3vh;
       transition: color 1s;
       font-weight: 600;
+      font-size: 1.2em;
 
       ${Container}:hover & {
         color: rgba(255,170,170,1);
@@ -112,7 +112,6 @@ export class Item extends React.Component{
 
 
     const Rating = styled.div`
-      color: black;
       font-size: 6em;
       font-weight: 700;
       color: #333;
@@ -120,7 +119,7 @@ export class Item extends React.Component{
       text-shadow: 0px 0px 0px rgba(255,85,0,1),
                    0px 0px 0px rgba(255,170,0,1),
                    0px 0px rgba(255,255,0,1);
-      transition: color 1s, text-shadow 1s, margin-bottom 1s;
+      transition: all 1s;
 
       ${Container}:hover & {
         color: rgb(255,0,170);
@@ -138,22 +137,22 @@ export class Item extends React.Component{
             <Link to={'/review/' + this.props.item.id}>
               <Image style={styleImage}>
                 <InternalTitle>
-                  <GameTitle>
+                  <GameTitle className='sans'>
                     {this.props.item.game}
                   </GameTitle>
-                  <GameSubtitle>
+                  <GameSubtitle className='serif'>
                     {this.props.item.title}
                   </GameSubtitle>
                 </InternalTitle>
               </Image>
               <Content>
-                <Author>
+                <Author className='serif'>
                   {this.props.item.author}
                 </Author>
-                <Rating>
+                <Rating className='sans'>
                   {this.props.item.rating}
                 </Rating>
-                <Date1>
+                <Date1 className='serif'>
                   {this.props.item.date}
                 </Date1>
               </Content>

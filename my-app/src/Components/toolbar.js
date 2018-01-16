@@ -83,9 +83,9 @@ export class Toolbar extends React.Component{
     return(
       <Container>
         <div>
-        <Title><Link to='/' style={styleMain}>Gamerank</Link></Title>
+        <Title className='serif'><Link to='/' style={styleMain}>Gamerank</Link></Title>
         <span style={style3}>
-          <About><Link to='/about' style={styleMain}>About</Link></About>
+          <About className='serif'><Link to='/about' style={styleMain}>About</Link></About>
         </span>
         </div>
       </Container>

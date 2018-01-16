@@ -4,15 +4,16 @@ export class Footer extends React.Component{
 
   render(){
     const style = {
-      marginTop: '15vh',
+      marginTop: '30vh',
       marginBottom: '5vh',
-      color: '#AAA',
-      fontSize: '.8em'
+      color: '#BBB',
+      fontSize: '.8em',
+      letterSpacing: '.5px'
 
     }
 
     return(
-      <div style={style}>
+      <div className='serif' style={style}>
         This site is just for fun and nothing serious, but I hope you enjoyed it.
       </div>
     )

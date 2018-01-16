@@ -17,17 +17,28 @@ export class Review extends React.Component{
     const style1 = {
       marginTop: '8vh',
       marginBottom: '10vh',
-      color: '#BBB'
+      color: '#BBB',
+
     }
 
     const stylePara = {
       color: '#BBB',
-      width: '50vw'
+      width: '50vw',
+      marginLeft: '25vw',
+      textAlign: 'left',
+      lineHeight: '180%',
+      letterSpacing: '.5px',
+      fontSize: '1.2em',
+      textIndent: '50px'
     }
 
     const styleTitle = {
-      color: '#BBB',
-      width: '50vw'
+      color: '#333',
+      width: '50vw',
+      marginLeft: '25vw',
+      textAlign: 'center',
+      //textShadow: '0px 4px 0px #BBB',
+      fontSize: '2.2em'
     }
 
     const styleImg = {
@@ -41,9 +52,9 @@ export class Review extends React.Component{
         {(function(){
           switch(chunk[0]){
             case 'p': //paragraph
-              return <div>{chunk[1]}</div>
+              return <div style={stylePara} className='serif'>{chunk[1]}</div>
             case 't': //title or quote
-             return <h1>{chunk[1]}</h1>
+             return <h1 style={styleTitle} className='sans'>{chunk[1]}</h1>
             case 'i': //image URL
               return  <img style={styleImg} src={chunk[1]} />
             default:
